@@ -1,0 +1,45 @@
+<table>
+
+	<tr>
+		<td>
+			<label for="firstnum">Premier nombre:</label>
+		</td>
+		<td>
+			<input name="firstnum" id="firstnum" value="{{firstnumValue | number: '1.0-2'}}" #firstnum>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<label for="secondnum">Second nombre:</label>
+		</td>
+		<td>
+			<input name="secondnum" id="secondnum" value="{{secondnumValue | number: '1.0-2'}}" #secondnum>
+		</td>
+	</tr>
+
+	<tr>
+		<td>
+			<label for="result">Résultat:</label>
+		</td>
+		<td>
+			<output name="result" id="result" value="{{result | number: '1.0-2'}}" > </output> 
+		</td>
+	</tr>
+
+
+
+
+
+
+	<tr>
+		<td>
+			<button (click)="addition(firstnum.value, secondnum.value)">+</button>
+		
+			<button (click)="substraction(firstnum.value, secondnum.value)">-</button>
+		
+			<button (click)="multiplication(firstnum.value, secondnum.value)">x</button>
+		
+			<button (click)="division(firstnum.value, secondnum.value)">/</button>
+		</td>
+	</tr>
+</table>

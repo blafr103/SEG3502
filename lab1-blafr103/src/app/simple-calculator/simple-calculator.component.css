@@ -1,0 +1,25 @@
+input {
+	border-style: double;
+	width: 150px;
+}
+output {
+	border-style: double;
+	width: 150px;
+}
+
+button {
+	background-color: darkslategrey;
+	padding: 20px 25px;
+	font-size: 40px;
+	color: white;
+
+}
+
+nav{
+
+	align-self: left;
+}
+
+label {
+	font-size: 30px;
+}
