@@ -1,0 +1,105 @@
+<div class="container">
+  <h1>Person Info</h1>
+
+  <!--
+<button (click)="addAuthor()">Add Person</button>
+-->
+
+  <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+
+
+    <div class="form-group">
+      <label for="title">Prénom:</label>
+      <input type="text" class="form-control" id="title" required formControlName="title">
+
+      <div [hidden]="title.pristine || title.valid"
+           class="alert alert-danger">
+        Le prénom est obligatoire.
+      </div>
+
+    </div>
+
+
+
+    <div class="form-group">
+      <label for="cost">Nom de famille:</label>
+
+      <input type="text" class="form-control" id="cost" required  formControlName="cost">
+      
+      <div [hidden]="cost.pristine || cost.valid"
+           class="alert alert-danger">
+        Le nom est obligatoire.
+      </div>
+
+    </div>
+
+
+    <div class="form-group">
+      <label for="id">Numéro de téléphone:</label>
+      <input type="text" class="form-control" id="id"  formControlName="id" required>
+
+      <div [hidden]="id.pristine || id.valid"
+           class="alert alert-danger">
+       Le numéro de téléphone doit comporter 10 chiffres avec les premier et quatrième chiffres différents de 0.
+      </div>
+
+    </div>
+
+
+    <div class="form-group">
+      <label for="category">Email:</label>
+      <input type="text" class="form-control" id="category"  formControlName="category">
+
+      <div [hidden]="category.pristine || category.valid"
+           class="alert alert-danger">
+        L'e-mail doit être conforme à un modèle d'e-mail valide.
+      </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+<!-- 
+    <div class="form-group">
+      <div formArrayName="authors">
+        <div *ngFor="let _ of authors.controls; let i=index">
+          <ng-container [formGroupName]="i">
+            <label>
+              Author First Name:
+              <input formControlName="firstName" type="text">
+            </label>
+            <label>
+              Author Last Name:
+              <input formControlName="lastName" type="text">
+            </label>
+            <button class="btn btn-dark" (click)="removeAuthor(i)">X</button>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="form-group">
+      <label for="year">Year:</label>
+      <input type="text" class="form-control" id="year" formControlName="year">
+    </div>
+
+
+    <div class="form-group">
+      <label for="description">Description:</label>
+      <textarea cols="40" class="form-control" id="description" formControlName="description"></textarea>
+    </div>
+ -->
+
+
+    <button type="submit" class="btn btn-success" [disabled]="bookForm.invalid">Submit</button>
+  </form>
+</div>

@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="nav-link">
+    <a [routerLink]="['/home']"> Home </a>
+    <a [routerLink]="['/about']"> About Us </a>
+    <a [routerLink]="['/contact']"> Contact Us </a>
+    <a [routerLink]="['/books']"> Search </a>
+    <a [routerLink]="['/login']"> Login </a>
+    <a [routerLink]="['/admin']"> Admin </a>
+  </div>
+</div>
+
+<div class="container-fluid" >
+  <div class="row">
+    <div class="col">
+      <img src="../assets/phone.jpg" height="150" width="175"/>
+    </div>
+    <div class="col-6">
+      <router-outlet></router-outlet>
+    </div>
+    <div class="col">
+      <img src="../assets/list.jpg" height="300" width="350"/>
+    </div>
+  </div>
+</div>
+
