@@ -1,0 +1,11 @@
+<button class="shopping-list-element ui positive"
+		[ngClass]="{'shopping-list-element-selected': selected}">
+	{{getFullItem()}}
+
+</button>
+
+
+
+<!-- delete button in-line with list-->
+<button class="btn btn-danger" name="delete" (click)="delete()">
+Delete</button>

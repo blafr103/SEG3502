@@ -1,0 +1,18 @@
+.shopping-list-element {
+	border: 1px solid ;
+	padding: 10px 2px;
+	font-size: 16px;
+	cursor: pointer;
+	width: 200px;
+	display: inline-block;
+}
+
+.shopping-list-element:active {
+	color: green;
+}
+
+.shopping-list-element-selected {
+	background-color: green;
+	color: white;
+	font-weight: bold;
+}

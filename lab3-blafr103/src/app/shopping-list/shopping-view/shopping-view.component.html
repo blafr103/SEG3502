@@ -1,0 +1,19 @@
+
+
+<form class="ui large form segment">
+
+
+
+
+
+	<fieldset [disabled]="!edit ? 'disabled' : null">
+		<div class="form-group">
+			<label for="num">Number of items</label>
+			<input class="form-control" name="num" id="num" [(ngModel)]="item.num">
+		</div>
+		<div class="form-group">
+			<label for="item">Item</label>
+			<input class="form-control" name="item" id="item" [(ngModel)]="item.item">
+		</div>
+	</fieldset>
+
