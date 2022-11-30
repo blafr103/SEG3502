@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "seg3502-lab5-867b1": {
+      "hosting": {
+        "address-book": [
+          "seg3502-lab5-867b1"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "seg3502-lab5-867b1"
+  }
+}

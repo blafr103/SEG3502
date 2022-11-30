@@ -1,0 +1,62 @@
+<div class="displayTable">
+  <div class="displayTableCell">
+    <div class="authBlock">
+      <h3>Sign Up</h3>
+      <form [formGroup]="signupForm" (ngSubmit)="register()">
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="text" class="form-control" id="email"  formControlName="email">
+          <div [hidden]="email.pristine || email.valid"
+               class="alert alert-danger">
+            Well formatted email is required.
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" class="form-control" id="name"  formControlName="name">
+          <div [hidden]="name.pristine || name.valid"
+               class="alert alert-danger">
+            A name must be provided.
+          </div>
+        </div>
+        <div formGroupName="pwGroup">
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" class="form-control" id="password" required
+                   formControlName="password">
+            <div [hidden]="password.pristine || password.valid"
+                 class="alert alert-danger">
+              A Password is required.
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="pwconfirm">Confirm Password:</label>
+            <input type="password" class="form-control" id="pwconfirm" required
+                   formControlName="confirmPassword">
+            <div [hidden]="confirmPassword.pristine || confirmPassword.valid"
+                 class="alert alert-danger">
+              A Confirmation Password is required.
+            </div>
+          </div>
+          <div [hidden]="(password.pristine || confirmPassword.pristine) || pwGroup.valid"
+               class="alert alert-danger">
+            The passwords do not match.
+          </div>
+        </div>
+        <button type="submit" class="btn btn-success" [disabled]="signupForm.invalid">Register</button>
+      </form>
+      <div class="formGroup">
+        <span class="or"><span class="orInner">Or</span></span>
+      </div>
+      <!-- Continue with Google -->
+      <div class="formGroup">
+        <button type="button" class="btn googleBtn" (click)="googleSignIn()">
+          Continue with Google
+        </button>
+      </div>
+    </div>
+    <div class="redirectToLogin">
+      <span>Already have an account? <span class="redirect" routerLink="/sign-in">Log In</span></span>
+    </div>
+  </div>
+</div>

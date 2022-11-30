@@ -1,0 +1,34 @@
+<div class="displayTable">
+  <div class="displayTableCell">
+    <div class="authBlock pt-5">
+      <h3>Sign In</h3>
+      <div class="formGroup">
+        <input type="text" class="formControl" placeholder="Email" #email required>
+      </div>
+      <div class="formGroup">
+        <input type="password" class="formControl" placeholder="Password" #userPassword required>
+      </div>
+      <div class="formGroup">
+        <input type="button" class="btn btn-outline-primary" value="Log in"
+               (click)="signIn(email.value, userPassword.value)">
+      </div>
+      <div class="formGroup">
+        <span class="or"><span class="orInner">Or</span></span>
+      </div>
+      <div class="formGroup">
+        <button type="button" class="btn btn-outline-primary" (click)="googleSignIn()">
+          Log in with Google
+        </button>
+      </div>
+      <div class="forgotPassword">
+        <span routerLink="/password-forgot">Forgot Password?</span>
+      </div>
+    </div>
+    <div class="redirectToLogin">
+      <span>
+        Don't have an account?
+        <span class="redirect" routerLink="/sign-up"> Sign Up</span>
+      </span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,83 @@
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+.column {
+  float: left;
+  width: 40%;
+  padding: 10px;
+}
+
+.column {
+  float: right;
+  width: 500px;
+  padding: 10px;
+  height: 300px;}
+
+
+</style>
+
+
+<div class="row">
+  <div class="column">
+    <h1>Données des utilisateurs</h1>
+    <table >
+      <tr >
+        <td >Prénom:</td>
+        <td >Nom de famille:</td>
+        <td >Numéro de téléphone:</td>
+        <td >Email:</td>
+      </tr>
+
+      <tr *ngFor="let address of addresses; let i = index ">
+        <td>{{address.firstName}}</td>
+        <td>{{address.lastName}}</td>
+        <td>{{address.phone}}</td>
+        <td>{{address.email}}</td>
+      </tr>
+    </table>
+
+  </div>
+
+  <div class="column">
+    
+  
+    <div class="row">
+      <div class="col-md-12">
+        <button class="btn btn-success" (click)="addAddress()">New Address</button>
+      </div>
+      <div class="col-md-8" [ngStyle]="msgStyle" [hidden]="hideMsg">
+        {{message}}
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="address-list col-md-3" *ngIf="addresses.length > 0">
+
+        
+        <app-address-list-element
+          *ngFor="let address of addresses"
+          [address]="address"
+          (click)='select(address)'
+        >
+        </app-address-list-element>
+      </div>
+      <div class="col-md-9">
+        <app-address-view *ngIf="currentAddress !== null"
+                          [address]="currentAddress"
+                          (fireDelete)='deleteCurrent()'
+                          (fireSave)='saveCurrent()'></app-address-view>
+      </div>
+</div>
+
+
+
+
+
+  </div>
+</div>
+
+
